@@ -5,7 +5,7 @@ TAL M1 annual project: refine word embeddings with semantic ressources (retrofit
 This report is based on the paper of [Faruqui et al, 2014](http://www.manaalfaruqui.com/papers/naacl15-retrofitting.pdf) to improve the word embeddings with the algorithm of retrofitting. It is used to post-process word vectors to incorporate knowledge from semantic lexicons (thesaurus). As shown in these word vectors are generally better in performance on semantic tasks than the original word vectors.
 
 ## Requirements
-1. Python2.7 or 3.6
+1. Python 2.7 or 3.6
 2. Libraries to install:
 	- numpy
 	- sklearn
@@ -57,8 +57,10 @@ A complete run of all the scipts will go through 4 processes and will take aroun
 
 ### Run .py file
 It is also possible to run the python scripts separatly:
-`python3 retrofit.py w2v_orig.txt thesaurus.txt output_w2v.txt -n num_iter -a alpha -b sumBeta`
-`python3 retrofit.py w2v_135k.txt ppdb-xl.txt output_wv135k_ppdb -n 10 -a 1 -b 1.0`
+```
+python3 retrofit.py w2v_orig.txt thesaurus.txt output_w2v.txt -n num_iter -a alpha -b sumBeta
+python3 retrofit.py w2v_135k.txt ppdb-xl.txt output_wv135k_ppdb -n 10 -a 1 -b 1.0
+```
 
 Where, 'n' is an integer which specifies the number of iterations for which the optimization is to be performed. Usually n = 10 gives reasonable results. 
 'a' and 'b' are hyper-parameters to indicate the weights for two parts in the algorithm (cf dossier).
